@@ -1,0 +1,53 @@
+@keyframes xuanzhuan{
+	0%{
+		transform: rotate(0);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+/*@keyframes zou{
+	0%{
+		transform: translateX(0px) translateY(0px);
+	}
+	25%{
+		transform: translateX(200px) translateY(0px);
+	}
+	50%{
+		transform: translateX(200px) translateY(200px);
+	}
+	75%{
+		transform: translateX(0px) translateY(200px);
+	}
+	100%{
+		transform: translateX(0px) translateY(0px);
+	}
+}*/
+@keyframes zou{
+	0%{
+		transform: translateX(0px) translateY(0px);
+	}
+	25%{
+		transform: translateX(500px) translateY(0px);
+	}
+	50%{
+		transform: translateX(500px) translateY(500px);
+	}
+	75%{
+		transform: translateX(0px) translateY(500px);
+	}
+	100%{
+		transform: translateX(0px) translateY(0px);
+	}
+}
+#a{
+	/*
+	 调用c3动画：动画名称 动画时长 速度线条   执行次数
+	 * */
+	/*animation: xuanzhuan 2s linear infinite;*/
+	animation:zou 10s linear infinite;
+}
+/*@-webkit-keyframes name{
+	from{}
+	to{}
+}*/

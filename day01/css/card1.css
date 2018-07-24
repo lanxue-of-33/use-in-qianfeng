@@ -1,0 +1,291 @@
+/*这里是作为一个独立的文件的，所以要再加样式防止出现中文乱码的情况*/
+@charset "utf-8";
+*{
+	margin:0;
+	padding: 0;
+}
+
+
+div{
+	width: 33.3%;
+	height: 350px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+}
+
+div img{
+	width: 100%;
+	opacity: 1;
+	transition: all 1s; /*过渡动画*/
+}
+div:hover img{
+	opacity: 0.5;
+}
+
+/*第一个盒子的模型*/
+div.box:hover img{
+	transform: translateX(30px);/*旋转*/
+}
+.box h1{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	transition: all 2s;/*过渡动画*/
+}
+.box:hover h1{
+	transform: translateX(30px);/*旋转*/
+}
+
+.box p{
+	background: deepskyblue;
+	font-size: 14px;/*奇数会向下取整*/
+	position: absolute;
+	left: 100px;
+	width: 100px;
+	transition: all 1s;
+}
+.box p:nth-child(3){
+	/*表示找到box的第三个且为p的子元素*/
+	top: 100px;
+	transform: translateY(500px);/*一开始的位置*/
+}
+.box:hover p:nth-child(3){
+	transform: translateY(0px);/*回到原先的位置*/
+}
+.box p:nth-child(4){
+	/*表示找到box的第四个且为p的子元素*/
+	top: 150px;
+	transform: translateX(-500px);
+}
+.box:hover p:nth-child(4){
+	transform: translateX(0px);
+}
+.box p:nth-child(5){
+	/*表示找到box的第五个且为p的子元素*/
+	top: 200px;
+	transform: translateX(3500px);
+}
+.box:hover p:nth-child(5){
+	transform: translateX(0px);
+}
+
+
+/*第二个盒子*/
+.box1 h1{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	/*transition: all 2s;过渡动画*/
+}
+.box1:hover img{
+	transform: translateX(-20px);
+}
+.box1 p{
+	position: absolute;
+	left: 30px;
+	background: white;
+	transform: translateX(-500px);
+}
+.box1 p:nth-child(3){
+	top: 100px;
+	transition: 1s;
+}
+.box1 p:nth-child(4){
+	top: 150px;
+	transition: 2s;
+}
+.box1 p:nth-child(5){
+	top: 200px;
+	transition: 3s;
+}
+.box1:hover p{
+	transform: translateX(0px);
+}
+
+/*第三个盒子*/
+.box2 h1{
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	z-index: 99;
+	transform: translateY(-50px);
+	transition: all 2s;/*过渡动画*/
+}
+.box2:hover h1{
+	transform: translateY(0px);
+}
+.box2:hover img{
+	transform: translateY(-20px);
+}
+
+.box2 P{
+	position: absolute;
+	width: 300px;
+	display: block;
+	left: 50px;
+	bottom: 0px;
+	opacity: 0;
+	font-size: 18px;
+	transition: all 1s;
+}
+.box2:hover p{
+	opacity: 1;
+	transform: translateY(-50px);
+}
+
+
+/*第四个盒子*/
+.box3 h1{
+	position: absolute;
+	top: 150px;
+	left: 40px;
+	transition: all 1s;
+}
+
+.box3 p{
+	position: absolute;
+	bottom: 20px;
+	right: 160px;
+	transform: translateY(200px);
+	transition: all 1s;
+	z-index: 9;
+}
+.box3:hover h1{
+	opacity: 1;
+	top: 100px;
+}
+.box3:hover p{
+	transform: translateY(-100px);
+}
+.box3 h2{
+	width: 150%;
+	height: 350px;
+	background: deepskyblue;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	transition: all 1s;
+	z-index: 1;
+	/*
+	 下面是改变旋转体的基点，第一个代表左右（left），第二个代表上下（top）
+	 * */
+	transform-origin: 0% 0%;
+}
+.box3:hover h2{
+	transform: rotate(-20deg);
+}
+
+
+/*第五个盒子*/
+.box4 h1{
+	position: absolute;
+	top: 50px;
+	left: 20px;
+	transition: 1s;
+	z-index: 9;
+}
+.box4:hover h1{
+	left: 80px;
+}
+.box4 p{
+	position: absolute;
+	bottom: 0px;
+	left: 80px;
+	width: 300px;
+	display: block;
+	transition: all 1s;
+	opacity: 0;
+}
+.box4:hover p{
+	bottom: 150px;
+	opacity: 1;
+}
+/*.box4 h2{
+	display: block;
+	width: 50%;
+	height: 50%;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	transition: all 1s;
+	transform-origin: 0% 0%;
+	border: 2px solid black;
+	opacity: 0;
+}
+.box4:hover h2{
+	opacity: 1;
+	transform: rotate(360deg) translateX(50px) translateY(30px);
+}*/
+/*这是旋转的另一种写法*/
+.box4 h2{
+	display: block;
+	width: 50%;
+	height: 50%;
+	position: absolute;
+	top: 30px;
+	left: 50px;
+	transition: all 1s;
+	transform-origin: 0% 0%;
+	transform: rotate(0deg) translateY(-150px);
+	border: 2px solid black;
+	opacity: 0;
+}
+.box4:hover h2{
+	opacity: 1;
+	transform: rotate(360deg) translateY(0px);
+}
+
+
+/*第六个盒子*/
+.box5 h1{
+	position: absolute;
+	right: 180px;
+	top: 100px;
+	transform: rotate(0deg) translateY(500px);
+	transition: all 1s;
+}
+.box5:hover h1{
+	transform: rotate(360deg) translateY(0px);
+}
+.box5 p{
+	position: absolute;
+	transition: all 1s;
+	background: white;
+}
+.box5 p:nth-child(3){
+	top: 10%;
+	left: 20%;
+	width: 0;
+	height: 2px;
+}
+.box5:hover p:nth-child(3){
+	width: 60%;
+}
+.box5 p:nth-child(4){
+	bottom: 10%;
+	right: 20%;
+	width: 0;
+	height: 2px;
+}
+.box5:hover p:nth-child(4){
+	width: 60%;
+}
+.box5 p:nth-child(5){
+	bottom: 8%;
+	left: 22%;
+	width: 2px;
+	height: 0;
+}
+.box5:hover p:nth-child(5){
+	height: 84%;
+}
+.box5 p:nth-child(6){
+	top: 8%;
+	right: 22%;
+	width: 2px;
+	height: 0;
+}
+.box5:hover p:nth-child(6){
+	height: 84%;
+}

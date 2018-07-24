@@ -1,0 +1,45 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#hezi{
+	width: 520px;
+	height: 280px;
+	overflow: hidden;
+	margin: 150px auto;
+}
+ul,li{
+		list-style: none;
+}
+ul{
+	width: 3120px;
+	height: 280px;
+	animation: lunbo 5s ease-in-out infinite;
+}
+li{
+	width: 520px;
+	height: 280px;
+	float: left;
+}
+
+@keyframes lunbo{
+	0%{
+		transform: translateX(0px);
+	}
+	20%{
+		transform: translateX(-520px);
+	}
+	40%{
+		transform: translateX(-1040px);
+	}
+	60%{
+		transform: translateX(-1560px);
+	}
+	80%{
+		transform: translateX(-2080px);
+	}
+	100%{
+		transform: translateX(-2600px);
+	}
+}

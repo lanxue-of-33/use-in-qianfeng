@@ -1,0 +1,134 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background: black;
+}
+
+#box{
+	width: 900px;
+	height: 300px;
+	margin: 200px auto;
+}
+.min-box{
+	width: 280px;
+	height: 300px;
+	float: left;
+	margin: 0px 10px;
+}
+.min-box span{
+	display: block;
+	width: 100%;
+	height: 250px;
+	text-align: center;
+}
+
+
+.min-box span img{
+	margin-top: 50px;
+	
+	/*下面有效果的是图片，所以需要加过渡的是图片
+	 all代表的是所有加在img上的效果都加过渡
+	 * */
+	transition: all 1s;
+}
+/*给图片添加效果*/
+.min-box span:hover img{
+	/*碰到span时，触发效果，改变的是图片*/
+	transform: rotate(360deg) scale(1.5);
+}
+
+/*
+ span是文本标签，所以可以用text-aling对其中的所以东西进行水平居中
+ 
+ 
+ a和span都是行内元素，所以不能直接设置宽高，需要用display进行类型的转换
+ * */
+.min-box a{
+	position: relative;/*为了给子元素进行定位*/
+	display: block;
+	text-decoration: none;
+	width: 250px;
+	height: 30px;
+	margin: 0 auto;
+	line-height: 30px;
+	text-align: center;
+	border: 2px solid white;
+	color: greenyellow;
+	/*引入背景图*/
+	background: url(../img/allow.png) no-repeat 210px center;
+	
+	transition: all 1s; 
+}
+.min-box a:hover{
+	/*这一行是为了让箭头移动*/
+	background: url(../img/allow.png) no-repeat 220px center;
+}
+
+/*设置四条线*/
+.min-box a p{
+	position: absolute;
+	background: white;
+	
+	transition: all 1s;
+}
+/*第一条线
+ 位于左上角，横线
+ * */
+.min-box a p:nth-child(1){
+	width: 0px;
+	height: 2px;
+	top: -2px;
+	left: -100%;
+}
+.min-box a:hover p:nth-child(1){
+	width: 100%;
+	left: 0px;
+}
+/*第二条线
+ 位于右下角，横线
+ * */
+.min-box a p:nth-child(2){
+	width: 0;
+	height: 2px;
+	bottom:-2px;
+	right: -100%;
+	/*
+	 right向右走是负数
+	 left向左走是负数
+	 top向上走是负数
+	 bottom向下走是负数
+	 * */
+}
+.min-box a:hover p:nth-child(2){
+	width: 100%;
+	right: 0px;
+}
+/*第三条线
+ 位于左上角，竖线
+ * */
+.min-box a p:nth-child(3){
+	width: 2px;
+	height: 0;
+	top: -100%;
+	left: -2px;
+}
+.min-box a:hover p:nth-child(3){
+	height: 100%;
+	top: 0px;
+}
+/*第四条线
+ 位于右下角，竖线
+ * */
+.min-box a p:nth-child(4){
+	width: 2px;
+	height: 0;
+	bottom: -100%;
+	right: -2px;
+}
+.min-box a:hover p:nth-child(4){
+	height: 100%;
+	bottom: 0px;
+}
+
