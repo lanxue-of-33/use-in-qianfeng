@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js写匀速无缝滚动</title>
+		<style>
+			*{
+				margin: 0px; padding: 0px;
+			}
+			#box{
+				width: 520px;height: 280px;
+				margin: 150px auto;
+				background: black;
+				overflow: hidden;
+				position: relative;
+			}
+			ul,li{
+				list-style: none;
+			}
+			ul.list{
+				width: 3120px;
+				height: 280px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			ul.list li{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul class="list">
+				<li><img src="img/1.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/4.jpg"/></li>
+				<li><img src="img/5.jpg"/></li>
+				<li><img src="img/1.jpg"/></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var list=document.getElementsByClassName('list')[0];
+		var timer=null;
+		var speed=0;
+		
+		
+		function lunbo(){
+			speed-=5;
+			if(speed<=-2600){
+				list.style.left=0;
+				speed=0;
+			}
+			list.style.left=speed+'px';
+		}
+		
+		timer=setInterval(lunbo,10);
+		
+	</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js写缓冲无缝滚动</title>
+		<style>
+			*{
+				margin: 0px; padding: 0px;
+			}
+			#box{
+				width: 520px;height: 280px;
+				margin: 150px auto;
+				background: black;
+				overflow: hidden;
+				position: relative;
+			}
+			ul,li{
+				list-style: none;
+			}
+			ul.list{
+				width: 3120px;
+				height: 280px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			ul.list li{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul class="list">
+				<li><img src="img/1.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/4.jpg"/></li>
+				<li><img src="img/5.jpg"/></li>
+				<li><img src="img/1.jpg"/></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var list=document.getElementsByClassName('list')[0];
+		var timer1=null;
+		var timer2=null;
+		var speed=0;
+		var idx=0;//自增下标		
+		
+		function lunboout(){
+			//外层定时器
+			
+			idx++;
+			if(idx==6){
+				list.style.left=0;
+				idx=1;
+			}
+			timer2=setInterval(lunboin,1000);
+			/*debugger;*/
+		}
+		function lunboin(){
+             //内层定时器
+             
+             //获取list的的left值
+             var left=list.offsetLeft;
+             
+             //每次到达的目标值
+             var target=-idx*520;
+             
+             //使得每次的速度都不一样
+             var speed=parseInt(left-target)/5;
+             //不让速度为零
+             console.log("first:"+speed);
+             speed=speed>0?Math.ceil(speed):Math.floor(speed);
+             console.log("tooo first:"+speed);
+             
+             
+             if(left==target){
+             	//到达目的地后就清除定时器，防止可能有bug
+             	clearInterval(lunboin);
+             }
+             
+             list.style.left=left-speed+'px';
+		}
+		
+		timer1=setInterval(lunboout,3000);
+		
+	</script>
+</html>

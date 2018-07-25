@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定时器</title>
+	</head>
+	<body>
+		
+		<div id="body" style="width: 20px;"></div>
+		<script type="text/javascript">
+			
+			var body=document.getElementById('body');
+			var num=10;
+	
+			//要牢记后面不用function
+			function time(){
+				if(num==0){
+					clearInterval(timer);
+				}
+//				body.innerHTML(num--);  这是错误的写法，以后要十分注意
+				body.innerHTML=num--;
+			}
+			var timer=setInterval(time,1000);
+			timer();
+			
+			
+		</script>
+	</body>
+</html>

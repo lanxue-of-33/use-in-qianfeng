@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="box"></div>
+		<p class="one"></p>
+		<a href="#">点击跳转百度</a>
+		
+		
+		
+		<script type="text/javascript">
+			var num=0; /*number类型*/
+			var str='老龚真帅';/*string类型*/
+			var arr=[num,str,0,'陈奕迅'];/*数组类型*/
+			var obj={
+				name:'陈冠希',
+				age:18
+			}
+			
+			alert(arr[0]);
+			document.write(obj.name);
+			console.log(arr,obj);
+			
+			var box=document.getElementById('box');
+			//通过id返回的是一个唯一值
+			var one=document.getElementsByClassName('one')[0];
+			//通过class返回的是一个数组，因为其class可以有多个
+			var a=document.getElementsByTagName('a');
+			//通过标签查找所返回的也是一个数组
+			console.log(box,one,a);
+			box.innerHTML="这是我们的盒子div";
+			debugger;
+			one.innerHTML="这是我们的p标签";
+			
+		</script>
+	</body>
+</html>

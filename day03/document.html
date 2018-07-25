@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js操作事件</title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			var box=document.getElementById('box');
+			box.onmouseover=function(){
+				this.style.background='red';
+			}
+			box.onmouseout=function(){
+				this.style.background='green';
+			}
+			//鼠标移入移出事件
+			//阻止了冒泡事件的发生，推荐使用
+			box.onmouseenter=function(){
+				
+			}
+			box.onmouseleave=function(){
+				
+			}
+			
+			
+			//下面是双击事件
+			box.ondblclick=function(){
+				this.style.width="200px";
+			}
+			
+			
+			//键盘按下及抬起事件
+//			document.onkeydown=function(){
+//				alert("键盘按下");
+//			}
+//			document.onkeyup=function(){
+//				alert("键盘抬起");
+//			}
+			//键盘按下抬起整个过程
+//			document.onkeypress=function(){
+//				alert("键盘按下抬起");
+//			}
+			//这也是冒泡事件，一按下会触发onkeydown和onkeypress这两个事件
+			
+			document.onkeydown=function(){
+				//获取事件元并输出键值
+				var evt=evt||window.event;
+				alert(evt.keyCode);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				margin: 150px auto;
+				width: 150px;
+				height: 150px;
+				background: red;
+				text-align: center;
+				line-height: 150px;
+			}
+			
+			.xingzou{
+				animation: xingzou 5s linear infinite;
+			}
+			
+			@keyframes xingzou{
+				0%{
+					transform: translate(0px,0px)
+				}
+				25%{
+					transform: translate(500px,0px)
+				}
+				50%{
+					transform: translate(500px,500px)
+				}
+				75%{
+					transform: translate(0px,500px)
+				}
+				100%{
+					transform: translate(0px,0px)
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			var box=document.getElementById('box');
+			var timer=null;
+			var arr=['black','red','pink','blue','#ccc','green','yellow'];
+			
+			box.onclick=function(){
+//				this.className='xingzou';
+				this.classList.add('xingzou');
+				timer=setInterval(changeColor,1000);
+			}
+			
+			function changeColor(){
+				//第一个代表取整，第二个代表取值是0--6；
+				var x=Math.round(Math.random()*6);
+				box.style.background=arr[x];
+				box.innerHTML=arr[x];
+			}
+		</script>
+	</body>
+</html>
